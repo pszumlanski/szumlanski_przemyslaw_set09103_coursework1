@@ -1,0 +1,31 @@
+<!-- PAGE FOR ADDING AMPS --!>
+<!-- MORE COMMENTS IN ADDGUITAR.HTML --!>
+
+<html>
+  <head>
+    <title>Add Amp</title>
+    <link href="{{ url_for('static', filename='navbar.css') }}" 
+      rel="stylesheet" />
+  </head>
+  <body>
+    <h2 style="margin-top: 50px"><center>Add an amp:</h2></center>
+
+    <div style="margin-top: 30px"><center>
+      <form action="" method="post" name="form" enctype="multipart/form-data">
+        Photo:<br>
+        <input type="file" name="photo" />
+        <br><br>
+        Brand:<br>
+        <input type="text" name="brand" id="brand"/>
+        <br><br>
+        Model:<br>
+        <input type="text" name="model" id="model"/>
+        <br><br>
+        Description:<br>
+        <textarea name="desc" id="desc" cols="60" rows="8"></textarea>
+        <br><br>
+        <input type="submit" name="submit" id="submit"/>
+      </form>
+    </div></center>
+  </body>
+</html>

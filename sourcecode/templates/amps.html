@@ -1,0 +1,46 @@
+<!-- AMPS PAGE --!>
+<!-- COMMENTS ON SPECIFICS CAN BE FOUND IN GUITARS.HTML --!>
+<html>
+  <head>
+    <title>Amplifiers</title>
+      <link href="{{ url_for('static', filename='navbar.css') }}"
+        rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <img src="/static/header.jpg" style="width: 100%">
+    </div>
+    <ul id="topul">
+      <li id="topli"><a href="/">Home</a></li>
+      <li id="topli"><a href="/guitars/">Guitars</a></li>
+      <li id="topli"><a class="active" href="/amps/">Amplifiers</a></li>
+      <li id="topli"><a href="/effects/">Guitar Effects</a></li>
+      <li style="float:right"><a href="/about/">About</a></li>
+    </ul>
+
+    <div id="sidediv">
+      <h3><center>Filter by brand:</center></h3>
+      <ul id="sideul">
+          <li id="sideli"><a href="/amps/filter/vox">Vox </a></li>
+          <li id="sideli"><a href="/amps/filter/marshall">Marshall</a></li>
+          <li id="sideli"><a href="/amps/filter/mesa">Mesa/Boogie</a></li>
+      </ul>
+    </div>
+
+    <div id="container">
+      {%for items in data %}
+        <a href="/amps/single/{{ items.id }}" class="div" id="itemsamps">
+          <img src="{{ url_for('static',
+            filename='uploads/amps/' + items.photo) }}"
+              style="width: 100%; height: 100%"/>
+          <p><center>{{ items.brand + " " + items.model }}</p></center>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div style="margin-top: 50px">
+      <a href="/amps/add" class="button">Add Amp</a>
+    </div>
+
+  </body>
+</html>

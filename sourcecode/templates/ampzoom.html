@@ -1,0 +1,27 @@
+<!-- SINGLE ITEM PAGE --!>
+<html>
+  <head>
+    <title>{{ data.brand + " " + data.model }}</title>
+      <link href="{{ url_for('static', filename='navbar.css') }}"
+        rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <img src="/static/header.jpg" style="width: 100%">
+    </div>
+      <ul id="topul">
+        <li id="topli"><a href="/">Home</a></li>
+        <li id="topli"><a href="/guitars/">Guitars</a></li>
+        <li id="topli"><a href="/amps/">Amplifiers</a></li>
+        <li id="topli"><a href="/effects/">Guitar Effects</a></li>
+        <li style="float:right"><a href="/about/">About</a></li>
+      </ul>
+    <div style="margin: 30px 30px 100px 300px; height: 500px; width: 60%;">
+      <img src="{{ url_for('static', filename='uploads/amps/' + data.photo) }}"
+        style="float: right; width: 60%; padding: 150px 0px 50px 50px;">
+      <h2 style="padding-top: 100px;"><center>{{ data.brand + " " + data.model }}</h2>
+      <p>{{ data.desc }}</center></p>
+
+    </div>
+  </body>
+</html>

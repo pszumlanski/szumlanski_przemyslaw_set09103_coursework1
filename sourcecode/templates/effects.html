@@ -1,0 +1,47 @@
+<!-- EFFECTS PAGE --!>
+<!-- COMMENTS ON SPECIFICS CAN BE FOUND IN GUITARS.HTML --!>
+
+<html>
+  <head>
+    <title>Guitar Effects</title>
+      <link href="{{ url_for('static', filename='navbar.css') }}"
+        rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <img src="/static/header.jpg" style="width: 100%;">
+    </div>
+    <ul id="topul">
+      <li id="topli"><a href="/">Home</a></li>
+      <li id="topli"><a href="/guitars/">Guitars</a></li>
+      <li id="topli"><a href="/amps/">Amplifiers</a></li>
+      <li id="topli"><a class="active" href="/effects/">Guitar Effects</a></li>
+      <li style="float:right"><a href="/about/">About</a></li>
+    </ul>
+
+    <div id="sidediv">
+      <h3><center>Filter by brand:</center></h3>
+      <ul id="sideul">
+        <li id="sideli"><a href="/effects/filter/boss">Boss</a></li>
+        <li id="sideli"><a
+        href="/effects/filter/colorsound">Colorsound</a></li>
+        <li id="sideli"><a href="/effects/filter/demeter">Demeter</a></li>
+      </ul>
+    </div>
+
+    <div id="container">
+      {% for items in data %}
+        <a href="/effects/single/{{ items.id }}" class="div" id="items">
+          <img src="{{ url_for('static',
+            filename='uploads/effects/' + items.photo) }}"
+              style="height: 100%; width: 100%"/>
+          <p><center>{{ items.brand + " " + items.model }}</p></center>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div style="margin-top: 50px">
+      <a href="/effects/add" class="button">Add Effect</a>
+    </div>
+  </body>
+</html>

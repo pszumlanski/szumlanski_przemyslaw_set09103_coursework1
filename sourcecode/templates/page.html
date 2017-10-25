@@ -1,0 +1,30 @@
+<!-- MAIN PAGE --!>
+
+<html>
+  <head>
+    <title>Music Gear</title>
+      <link href="{{ url_for('static', filename='navbar.css') }}"
+        rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <img src="/static/header.jpg" style="width: 100%;"> <!-- LOGO IMAGE --!>
+    </div>
+
+    <!-- NAVIGATION BAR --!>
+    <ul id="topul">
+      <li id="topli"><a class="active" href="/">Home</a></li>
+      <li id="topli"><a href="/guitars/">Guitars</a></li>
+      <li id="topli"><a href="/amps/">Amplifiers</a></li>
+      <li id="topli"><a href="/effects/">Guitar Effects</a></li>
+      <li style="float:right"><a href="/about/">About</a></li>
+    </ul>
+
+    <h2><center>Welcome to Music Gear, world's best 
+      catalogue for all your musical needs</h2></center>
+    
+    <p style="margin-top: 50px;"><center>Choose categories from navigation bar
+      above</p></center>
+
+  </body>
+</html>
